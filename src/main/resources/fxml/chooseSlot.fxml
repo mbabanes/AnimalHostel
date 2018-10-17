@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="1093.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="animalHostel.gui.controllers.ChooseSlotForAnimalController">
+   <children>
+      <TableView fx:id="slotsTableView">
+        <columns>
+            <TableColumn fx:id="slotNUmberColumn" prefWidth="75.0" text="%slot.slotNumber" />
+          <TableColumn fx:id="numberOfAnimalsColumn" prefWidth="75.0" text="%chooseSlot.numberOfAnimal" />
+          <TableColumn fx:id="typeOfAnimalColumn" prefWidth="75.0" text="%animal.type" />
+            <TableColumn fx:id="raceOfAnimalColumn" prefWidth="75.0" text="%animal.race" />
+            <TableColumn fx:id="areaColumn" prefWidth="75.0" text="%slot.area" />
+            <TableColumn fx:id="heightColumn" prefWidth="75.0" text="%slot.height" />
+            <TableColumn fx:id="insideColumn" prefWidth="75.0" text="%slot.inside" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

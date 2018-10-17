@@ -1,0 +1,69 @@
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'mysql:mysql-connector-java:5.1.42'
+    compile group: 'com.itextpdf', name: 'itextpdf', version: '5.0.6'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+
+    testCompile "org.testfx:testfx-core:4.0.+"
+    testCompile "org.testfx:testfx-junit:4.0.+"
+
+//    testCompile group: 'org.easymock', name: 'easymock', version: '3.4'
+
+//    testCompile "org.mockito:mockito-core:2.4.0"
+    testCompile 'org.powermock:powermock-module-junit4:1.7.0RC2',
+            'org.powermock:powermock-api-mockito2:1.7.0RC2'
+//            'org.powermock:powermock-api-easymock:1.7.0RC2'
+
+}
+
+test{
+    include '**/*Spec.class'
+}
+
+
+task testInteg(type: Test){
+    include '**/*Integ.class'
+}
+
+task testGui(type: Test){
+    include '**/*GuiTest.class'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'animalHostel.gui.Main',
+        )
+    }
+}
+
+task fatJar(type: Jar) {
+    manifest.from jar.manifest
+    classifier = 'all'
+    from {
+        configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+    with jar
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

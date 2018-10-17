@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" minHeight="600.0" minWidth="800.0" prefHeight="767.0" prefWidth="963.0"
+            xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="animalHostel.gui.controllers.MainController">
+    <top>
+        <fx:include fx:id="topMenuButtons" source="TopMenuButtons.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="697.0" prefWidth="865.0"
+                    BorderPane.alignment="TOP_CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </ScrollPane>
+    </center>
+</BorderPane>

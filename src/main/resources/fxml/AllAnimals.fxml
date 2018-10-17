@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="allAnimalsGridPane" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="animalHostel.gui.controllers.AllAnimalsController">
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="1.7976931348623157E308" valignment="CENTER" vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <TableView fx:id="allAnimalTableView" minHeight="200.0" onScroll="#onScrollDownOnScrollToFinished" tableMenuButtonVisible="true" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+            <columns>
+                <TableColumn fx:id="idTableIColumn" text="%id" />
+                <TableColumn fx:id="slotTableIColumn" text="%slot.slotNumber" />
+                <TableColumn fx:id="nameTableIColumn" text="%animal.name" />
+                <TableColumn fx:id="typeTableIColumn" text="%animal.type" />
+                <TableColumn fx:id="raceTableIColumn" text="%animal.race" />
+                <TableColumn fx:id="colorTableIColumn" text="%animal.color" />
+                <TableColumn fx:id="weightTableIColumn" text="%animal.weight" />
+                <TableColumn fx:id="birthdayTableIColumn" text="%animal.birthday" />
+                <TableColumn fx:id="registeredTableIColumn" text="%animal.dateOfRegister" />
+                <TableColumn fx:id="patronIdTableIColumn" text="%animal.PatronId" />
+                <TableColumn fx:id="patronNameTableIColumn" text="%animal.patronName" />
+                <TableColumn fx:id="patronSurnameTableIColumn" text="%animal.patronSurname" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#registerAnimalToHeal" text="%allAnimals.contextMenu.registerAnimalToHeal" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+        </TableView>
+    </children>
+</GridPane>

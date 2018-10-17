@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0"
+      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="animalHostel.gui.controllers.TopMenuButtonsController">
+    <children>
+        <ToggleButton fx:id="addNewAnimalToggleButton" mnemonicParsing="false" onAction="#addAnimalFormShowOnAction"
+                      prefHeight="50.0" text="%topMenu.addAnimal" textAlignment="CENTER">
+            <toggleGroup>
+                <ToggleGroup fx:id="TopMenuToggleButtons"/>
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton fx:id="addTypeToggleButton" mnemonicParsing="false" onAction="#addAnimalTypeFromShowOnAction"
+                      prefHeight="50.0" text="%topMenu.addType" toggleGroup="$TopMenuToggleButtons"/>
+        <ToggleButton fx:id="animalsToggleButton" mnemonicParsing="false" onAction="#allAnimalsTable" prefHeight="50.0"
+                      text="%topMenu.animals" toggleGroup="$TopMenuToggleButtons"/>
+        <ToggleButton fx:id="addAnimalToHealToggleButton" mnemonicParsing="false"
+                      onAction="#addAnimalToHealViewOnAction" prefHeight="50.0" text="%animalToHeal.AddAnimalToHeal"
+                      toggleGroup="$TopMenuToggleButtons"/>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+</HBox>
